@@ -18,6 +18,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="Theme.NoStatusBar" parent="Theme.GroceriesApp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 
     <style name="Theme.GroceriesApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
