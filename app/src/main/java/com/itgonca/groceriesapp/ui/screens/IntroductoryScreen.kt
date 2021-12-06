@@ -20,40 +20,40 @@ import com.itgonca.groceriesapp.R
 import com.itgonca.groceriesapp.ui.theme.GroceriesAppTheme
 
 @Composable
-fun IntroductoryScreen() {
+fun IntroductoryScreen( onGetStartedClick: () -> Unit) {
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
-            painter = painterResource(id = R.drawable.introductory_background),
-            contentDescription = "Introductory background",
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Crop
+                painter = painterResource(id = R.drawable.introductory_background),
+                contentDescription = "Introductory background",
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop
         )
         Column(
-            modifier = Modifier.align(Alignment.BottomCenter),
-            horizontalAlignment = Alignment.CenterHorizontally
+                modifier = Modifier.align(Alignment.BottomCenter),
+                horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.ic_carrot),
-                contentDescription = "Carrot icon",
-                modifier = Modifier.padding(bottom = 16.dp)
+                    painter = painterResource(id = R.drawable.ic_carrot),
+                    contentDescription = "Carrot icon",
+                    modifier = Modifier.padding(bottom = 16.dp)
             )
             Text(
-                text = "Welcome \n to our store",
-                textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.h1.copy(color = Color.White)
+                    text = "Welcome \n to our store",
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.h1.copy(color = Color.White)
             )
             Text(
-                text = "Get you groceries in as fast one hour",
-                style = MaterialTheme.typography.body1.copy(color = Color.White),
-                modifier = Modifier.padding(top = 8.dp, bottom = 24.dp)
+                    text = "Get you groceries in as fast one hour",
+                    style = MaterialTheme.typography.body1.copy(color = Color.White),
+                    modifier = Modifier.padding(top = 8.dp, bottom = 24.dp)
             )
             Button(
-                onClick = { },
-                colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 24.dp, end = 24.dp, bottom = 24.dp),
-                shape = RoundedCornerShape(20.dp)
+                    onClick = { onGetStartedClick() },
+                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary),
+                    modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 24.dp, end = 24.dp, bottom = 24.dp),
+                    shape = RoundedCornerShape(20.dp)
             ) {
                 Text(text = "Get Started", Modifier.padding(top = 12.dp, bottom = 12.dp))
             }
@@ -66,6 +66,6 @@ fun IntroductoryScreen() {
 @Composable
 fun IntroductoryScreenPreview() {
     GroceriesAppTheme {
-        IntroductoryScreen()
+        IntroductoryScreen {}
     }
 }

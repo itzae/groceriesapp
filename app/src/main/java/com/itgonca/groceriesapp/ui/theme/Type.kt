@@ -22,10 +22,26 @@ val Typography = Typography(
         fontSize = 48.sp,
         lineHeight = 60.sp
     ),
+    h4 = TextStyle(
+        fontFamily = GilroyFont,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 26.sp,
+        lineHeight = 35.sp
+    ),
+    subtitle2 = TextStyle(
+        fontFamily = GilroyFont,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp
+    ),
     body1 = TextStyle(
         fontFamily = GilroyFont,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp
+    ),
+    caption = TextStyle(
+        fontFamily = GilroyFont,
+        fontWeight = FontWeight.Medium,
+        fontSize = 18.sp
     )
     /* Other default text styles to override
     button = TextStyle(
