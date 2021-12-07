@@ -28,6 +28,21 @@ val Typography = Typography(
         fontSize = 26.sp,
         lineHeight = 35.sp
     ),
+    h5 = TextStyle(
+        fontFamily = GilroyFont,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 24.sp
+    ),
+    h6 = TextStyle(
+        fontFamily = GilroyFont,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 18.sp
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = GilroyFont,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 16.sp
+    ) ,
     subtitle2 = TextStyle(
         fontFamily = GilroyFont,
         fontWeight = FontWeight.SemiBold,

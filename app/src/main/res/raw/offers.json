@@ -1,0 +1,40 @@
+{
+  "offers":[
+    {
+      "id":0,
+      "name":"Organica Bananas",
+      "quantity":7,
+      "weight":1.0,
+      "price":4.99
+    },
+    {
+      "id":1,
+      "name":"Red Apple",
+      "quantity":7,
+      "weight":1.0,
+      "price":4.99
+    },
+    {
+      "id":2,
+      "name":"Beef Bone",
+      "quantity":7,
+      "weight":1.0,
+      "price":4.99
+    },
+    {
+      "id":3,
+      "name":"Egg Pasta",
+      "quantity":7,
+      "weight":0.030,
+      "price":15.99
+    },
+    {
+      "id":4,
+      "name":"Pepsi Can",
+      "quantity":7,
+      "weight":null,
+      "price":4.99,
+      "capacity":0.330
+    }
+  ]
+}

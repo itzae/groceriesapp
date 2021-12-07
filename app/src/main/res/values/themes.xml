@@ -18,6 +18,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="Theme.NoStatusBar" parent="Theme.GroceriesApp">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

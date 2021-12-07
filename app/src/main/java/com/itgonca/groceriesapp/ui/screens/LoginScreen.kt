@@ -23,7 +23,10 @@ import com.itgonca.groceriesapp.ui.base.rememberInputState
 import com.itgonca.groceriesapp.ui.theme.*
 
 @Composable
-fun LoginScreen(phoneNumberText: InputStateHolder = rememberInputState(hint = "Phone number")) {
+fun LoginScreen(
+    phoneNumberText: InputStateHolder = rememberInputState(hint = "Phone number"),
+    onLogin: () -> Unit
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -71,7 +74,7 @@ fun LoginScreen(phoneNumberText: InputStateHolder = rememberInputState(hint = "P
                 style = MaterialTheme.typography.subtitle2.copy(color = Grey70)
             )
             Button(
-                onClick = { },
+                onClick = { onLogin() },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 32.dp, start = 16.dp, end = 16.dp),
@@ -125,6 +128,6 @@ fun LoginScreen(phoneNumberText: InputStateHolder = rememberInputState(hint = "P
 @Composable
 fun LoginScreenPreview() {
     GroceriesAppTheme {
-        LoginScreen()
+        LoginScreen {}
     }
 }
