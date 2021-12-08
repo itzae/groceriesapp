@@ -13,6 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.itgonca.groceriesapp.R
+import com.itgonca.groceriesapp.ui.components.CardItemGrocery
 import com.itgonca.groceriesapp.ui.theme.Green100
 import com.itgonca.groceriesapp.ui.theme.GroceriesAppTheme
 
@@ -48,7 +49,11 @@ fun OfferSection(modifier: Modifier = Modifier) {
                 style = MaterialTheme.typography.subtitle1.copy(color = Green100)
             )
         }
-        LazyRow(content = {})
+        LazyRow(content = {
+            items(5){
+                CardItemGrocery()
+            }
+        })
     }
 }
 
