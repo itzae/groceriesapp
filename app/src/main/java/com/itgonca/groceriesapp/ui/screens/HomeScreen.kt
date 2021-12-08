@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.itgonca.groceriesapp.R
 import com.itgonca.groceriesapp.ui.components.CardItemGrocery
+import com.itgonca.groceriesapp.ui.components.CategoryItem
 import com.itgonca.groceriesapp.ui.theme.Green100
 import com.itgonca.groceriesapp.ui.theme.GroceriesAppTheme
 
@@ -28,13 +29,28 @@ fun HomeScreen() {
             )
         }
         item {
-            OfferSection(modifier = Modifier.padding(top = 24.dp))
+            SectionItem(modifier = Modifier.padding(top = 24.dp), "Exclusive Offer")
         }
+        item {
+            SectionItem(modifier = Modifier.padding(top = 24.dp), "Best selling")
+        }
+        item {
+            SectionItem(modifier = Modifier.padding(top = 24.dp), "Groceries") {
+                LazyRow(content = {
+                    items(5){CategoryItem()}
+                })
+            }
+        }
+
     }
 }
 
 @Composable
-fun OfferSection(modifier: Modifier = Modifier) {
+fun SectionItem(
+    modifier: Modifier = Modifier,
+    nameSection: String,
+    content: @Composable () -> Unit = {}
+) {
     Column(modifier = modifier) {
         Row(
             modifier = Modifier
@@ -43,14 +59,15 @@ fun OfferSection(modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "Exclusive Offer", style = MaterialTheme.typography.h5)
+            Text(text = nameSection, style = MaterialTheme.typography.h5)
             Text(
                 text = "See all",
                 style = MaterialTheme.typography.subtitle1.copy(color = Green100)
             )
         }
-        LazyRow(content = {
-            items(5){
+        content()
+        LazyRow(modifier = Modifier.padding(top = 12.dp), content = {
+            items(5) {
                 CardItemGrocery()
             }
         })
@@ -66,5 +83,5 @@ fun HomeScreenPreview() {
 @Preview(name = "OfferSectionPreview", showBackground = true)
 @Composable
 fun OfferSectionPreview() {
-    GroceriesAppTheme { OfferSection() }
+    GroceriesAppTheme { SectionItem(nameSection = "Exclusive offer") }
 }
