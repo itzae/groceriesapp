@@ -19,8 +19,8 @@ import com.itgonca.groceriesapp.ui.theme.Green100
 import com.itgonca.groceriesapp.ui.theme.GroceriesAppTheme
 
 @Composable
-fun HomeScreen() {
-    LazyColumn(modifier = Modifier.fillMaxWidth()) {
+fun HomeScreen(modifier: Modifier = Modifier) {
+    LazyColumn(modifier = modifier.fillMaxWidth()) {
         item {
             Image(
                 painter = painterResource(id = R.drawable.banner_home),
@@ -37,7 +37,7 @@ fun HomeScreen() {
         item {
             SectionItem(modifier = Modifier.padding(top = 24.dp), "Groceries") {
                 LazyRow(content = {
-                    items(5){CategoryItem()}
+                    items(5) { CategoryItem() }
                 })
             }
         }
