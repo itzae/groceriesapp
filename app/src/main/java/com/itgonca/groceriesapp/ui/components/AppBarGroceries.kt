@@ -3,11 +3,11 @@ package com.itgonca.groceriesapp.ui.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,10 +38,40 @@ fun AppBarMain(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun AppBarWithAction(onNavigation: () -> Unit) {
+    TopAppBar(
+        navigationIcon = {
+            IconButton(onClick = { }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_back_arrow),
+                    contentDescription = "Back icon"
+                )
+            }
+        }, actions = {
+            IconButton(onClick = { }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_share),
+                    contentDescription = "Share product"
+                )
+            }
+        },
+        title = {}
+    )
+}
+
 @Preview(name = "AppBarMainPreview")
 @Composable
 fun AppBarMainPreview() {
     GroceriesAppTheme {
         AppBarMain()
+    }
+}
+
+@Preview(name = "AppBarWithActionsPreview")
+@Composable
+fun AppBarWithActionsPreview() {
+    GroceriesAppTheme {
+        AppBarWithAction {}
     }
 }
